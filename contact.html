@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Contact — Skill Sawasawa</title>
+    <meta
+      name="description"
+      content="Get in touch with Skill Sawasawa for bookings, film scoring, and collaborations."
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+  </head>
+  <body>
+    <header class="site-header is-scrolled">
+      <div class="container">
+        <a
+          href="index.html"
+          class="brand"
+        >
+          SKILL
+          <span>SAWASAWA</span>
+        </a>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          &#9776;
+        </button>
+        <ul class="nav-links">
+          <li>
+            <a
+              href="index.html"
+              data-i18n="nav.home"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="index.html#journey"
+              data-i18n="nav.journey"
+            >
+              Journey
+            </a>
+          </li>
+          <li>
+            <a
+              href="index.html#releases"
+              data-i18n="nav.releases"
+            >
+              Releases
+            </a>
+          </li>
+          <li>
+            <a
+              href="gallery.html"
+              data-i18n="nav.gallery"
+            >
+              Gallery
+            </a>
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              data-i18n="nav.contact"
+            >
+              Contact
+            </a>
+          </li>
+          <li class="lang-switch">
+            <button
+              data-lang="en"
+              type="button"
+            >
+              EN
+            </button>
+            <button
+              data-lang="fr"
+              type="button"
+            >
+              FR
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="page-hero">
+      <div class="container">
+        <span
+          class="eyebrow"
+          data-i18n="contacthero.eyebrow"
+        >
+          Contact
+        </span>
+        <h1 data-i18n="contacthero.title">Get in touch.</h1>
+        <p data-i18n="contacthero.desc">
+          For bookings, film scoring, licensing, or press — reach out directly
+          or send me a message below.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2 data-i18n="contact.sayhello">Say hello.</h2>
+          <p data-i18n="contact.intro">
+            I'm based in Eastern DRC, working with film, documentary, and
+            creative projects worldwide.
+          </p>
+
+          <dl class="contact-detail">
+            <dt data-i18n="contact.label.email">Email</dt>
+            <dd>
+              <a
+                href="mailto:
+jeremiahskill@gmail.com"
+              >
+                jeremiahskill@gmail.com
+              </a>
+            </dd>
+
+            <dt data-i18n="contact.label.booking">Booking &amp; press</dt>
+            <!-- REPLACE with real email or contact person -->
+            <dd>
+              <a href="mailto:booking@skillsawasawa.com">
+                booking@skillsawasawa.com
+              </a>
+            </dd>
+
+            <dt data-i18n="contact.label.based">Based in</dt>
+            <!-- REPLACE with real location if desired -->
+            <dd data-i18n="contact.based.value">
+              Goma, North Kivu — Democratic Republic of the Congo
+            </dd>
+          </dl>
+
+          <div class="social-row">
+            <!-- REPLACE all with real profile URLs -->
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+            >
+              Instagram
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+            >
+              YouTube
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+            >
+              Spotify
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+            >
+              Facebook
+            </a>
+          </div>
+        </div>
+
+        <form
+          class="contact-form"
+          data-contact-form
+        >
+          <!--
+        This form currently has no backend — see contact.js for two options
+        to wire it up (form service like Formspree, or a custom endpoint).
+      -->
+          <div class="field">
+            <label
+              for="name"
+              data-i18n="contact.form.name"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+            />
+          </div>
+          <div class="field">
+            <label
+              for="email"
+              data-i18n="contact.form.email"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="field">
+            <label
+              for="subject"
+              data-i18n="contact.form.subject"
+            >
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              data-i18n-placeholder="contact.form.subject.placeholder"
+              placeholder="Booking, licensing, press…"
+            />
+          </div>
+          <div class="field">
+            <label
+              for="message"
+              data-i18n="contact.form.message"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn solid"
+            data-i18n="contact.form.submit"
+          >
+            Send message
+          </button>
+          <p
+            class="form-note"
+            data-form-status
+          ></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <span>
+            &copy;
+            <span data-year></span>
+            Skill Sawasawa. All rights reserved.
+          </span>
+          <span data-i18n="footer.tagline">
+            YiraFolk — Eastern DRC, reimagined.
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+  </body>
+</html>
