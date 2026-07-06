@@ -15,11 +15,11 @@ const I18N = {
     "nav.gallery": "Gallery",
     "nav.contact": "Contact",
 
-    "hero.eyebrow": "Composer &middot; Musician &middot; Creator of YiraFolk",
+    "hero.eyebrow": "Composer &middot; Musician &middot; Sound Storyteller",
     "hero.title":
       "I write music the way<br /><em>my region tells stories.</em>",
     "hero.tagline":
-      "I'm Skill Sawasawa. I carry the traditional sound of Eastern DRC into a contemporary language for film and documentary.",
+      "I'm Skill Sawasawa. I preserve the music of my region by honoring its history, culture, and identity. I create original music and sonic landscapes for films, documentaries, and visual storytelling.",
     "hero.scroll": "Scroll",
 
     "about.eyebrow": "About",
@@ -90,12 +90,11 @@ const I18N = {
     "nav.gallery": "Galerie",
     "nav.contact": "Contact",
 
-    "hero.eyebrow":
-      "Compositeur &middot; Musicien &middot; Créateur du YiraFolk",
+    "hero.eyebrow": "Compositeur &middot; Musicien &middot; Narrateur sonore",
     "hero.title":
       "J’écris la musique comme<br/><em> ma région raconte ses histoires</em>",
     "hero.tagline":
-      "Je suis Skill Sawasawa. À travers le YiraFolk, je porte le son traditionnel de l'Est de la RDC vers un langage cinématographique et contemporain, pour le cinéma et le documentaire.",
+      "Je suis Skill Sawasawa. Je préserve la musique de ma région en honorant son histoire, sa culture et son identité. Je crée des musiques originales et des paysages sonores pour des films, des documentaires et des récits visuels.",
     "hero.scroll": "Défiler",
 
     "about.eyebrow": "À propos",
