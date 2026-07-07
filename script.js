@@ -131,15 +131,53 @@ function renderReleases() {
   const src =
     `https://www.youtube.com/embed/${INTERVIEW_VIDEO_ID}` +
     `?autoplay=1&mute=1&loop=1&playlist=${INTERVIEW_VIDEO_ID}` +
-    `&controls=0&modestbranding=1&playsinline=1&rel=0`;
+    `&controls=0&modestbranding=1&playsinline=1&rel=0` +
+    `&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
 
   wrap.innerHTML = `
     <iframe
       src="${src}"
       title="Skill Sawasawa — video interview"
       allow="autoplay; encrypted-media; picture-in-picture"
-      allowfullscreen>
+      allowfullscreen id="interview-frame">
     </iframe>`;
+})();
+
+(function configureVideoSoundControl() {
+  const btn = document.querySelector("[data-video-sound]");
+  const frame = document.getElementById("interview-frame");
+
+  if (!btn || !frame) return;
+
+  let muted = true;
+
+  function sendCommand(func) {
+    frame.contentWindow.postMessage(
+      JSON.stringify({ event: "command", func, args: [] }),
+      "*",
+    );
+  }
+
+  const ICON_MUTED = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+  </svg>
+  `;
+  const ICON_UNMUTED = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+  </svg>`;
+
+  function updateLabel() {
+    btn.innerHTML = muted ? ICON_MUTED : ICON_UNMUTED;
+    btn.setAttribute("aria-pressed", String(!muted));
+  }
+
+  btn.addEventListener("click", () => {
+    muted = !muted;
+    sendCommand(muted ? "mute" : "unMute");
+    updateLabel();
+  });
+
+  updateLabel();
 })();
 
 /* ---- Footer year -------------------------------------------------------- */
