@@ -105,42 +105,6 @@ const RELEASES = [
    ------------------------------------------------------------------------- */
 const TIMELINE = [
   {
-    year: "2018 — 2024",
-    title: {
-      en: "Participating in the region's sound-engineering foundation",
-      fr: "Contribuer aux fondations de l'ingénierie du son dans la région",
-    },
-    description: {
-      en: "I contributed to sound engineering at the AMANI Festival, and worked with MUSIC FUND, AFRISCENE, and the Institut Français on sound-engineering training sessions in Goma and Bukavu.",
-      fr: "J'ai contribué à l'ingénierie du son au Festival AMANI, et collaboré avec MUSIC FUND, AFRISCENE et l'Institut Français lors de sessions de formation en ingénierie du son à Goma et Bukavu.",
-    },
-    tags: [
-      { en: "AMANI Festival", fr: "Festival AMANI" },
-      { en: "MUSIC FUND", fr: "MUSIC FUND" },
-      { en: "AFRISCENE", fr: "AFRISCENE" },
-      { en: "Institut Français", fr: "Institut Français" },
-    ],
-  },
-  {
-    year: "2024",
-    title: {
-      en: "HORIZON — with Rogatien Milord",
-      fr: "HORIZON — avec Rogatien Milord",
-    },
-    description: {
-      en: "I took part in Rogatien Milord's major album project HORIZON, working alongside sound engineers from Europe, the United States, and Canada — including Djizzo Balume and KC Porter. The launch was covered by major media outlets including FRANCE 24, TV5 MONDE, VOA, RFI, CANAL+, and TRACE TV.",
-      fr: "J'ai participé à HORIZON, le grand projet d'album de Rogatien Milord, aux côtés d'ingénieurs du son venus d'Europe, des États-Unis et du Canada — dont Djizzo Balume et KC Porter. Le lancement a été couvert par de grands médias tels que FRANCE 24, TV5 MONDE, VOA, RFI, CANAL+ et TRACE TV.",
-    },
-    tags: [
-      { en: "HORIZON album", fr: "Album HORIZON" },
-      { en: "International collaboration", fr: "Collaboration internationale" },
-      {
-        en: "FRANCE 24 · TV5 MONDE · VOA · RFI · CANAL+ · TRACE TV",
-        fr: "FRANCE 24 · TV5 MONDE · VOA · RFI · CANAL+ · TRACE TV",
-      },
-    ],
-  },
-  {
     year: "2025",
     title: {
       en: "Scoring 'Trop c'est Trop'",
@@ -169,6 +133,42 @@ const TIMELINE = [
     tags: [
       { en: "Album release", fr: "Sortie d'album" },
       { en: "YiraFolk", fr: "YiraFolk" },
+    ],
+  },
+  {
+    year: "2024",
+    title: {
+      en: "HORIZON — with Rogatien Milord",
+      fr: "HORIZON — avec Rogatien Milord",
+    },
+    description: {
+      en: "I took part in Rogatien Milord's major album project HORIZON, working alongside sound engineers from Europe, the United States, and Canada — including Djizzo Balume and KC Porter. The launch was covered by major media outlets including FRANCE 24, TV5 MONDE, VOA, RFI, CANAL+, and TRACE TV.",
+      fr: "J'ai participé à HORIZON, le grand projet d'album de Rogatien Milord, aux côtés d'ingénieurs du son venus d'Europe, des États-Unis et du Canada — dont Djizzo Balume et KC Porter. Le lancement a été couvert par de grands médias tels que FRANCE 24, TV5 MONDE, VOA, RFI, CANAL+ et TRACE TV.",
+    },
+    tags: [
+      { en: "HORIZON album", fr: "Album HORIZON" },
+      { en: "International collaboration", fr: "Collaboration internationale" },
+      {
+        en: "FRANCE 24 · TV5 MONDE · VOA · RFI · CANAL+ · TRACE TV",
+        fr: "FRANCE 24 · TV5 MONDE · VOA · RFI · CANAL+ · TRACE TV",
+      },
+    ],
+  },
+  {
+    year: "2018 — 2024",
+    title: {
+      en: "Participating in the region's sound-engineering foundation",
+      fr: "Contribuer aux fondations de l'ingénierie du son dans la région",
+    },
+    description: {
+      en: "I contributed to sound engineering at the AMANI Festival, and worked with MUSIC FUND, AFRISCENE, and the Institut Français on sound-engineering training sessions in Goma and Bukavu.",
+      fr: "J'ai contribué à l'ingénierie du son au Festival AMANI, et collaboré avec MUSIC FUND, AFRISCENE et l'Institut Français lors de sessions de formation en ingénierie du son à Goma et Bukavu.",
+    },
+    tags: [
+      { en: "AMANI Festival", fr: "Festival AMANI" },
+      { en: "MUSIC FUND", fr: "MUSIC FUND" },
+      { en: "AFRISCENE", fr: "AFRISCENE" },
+      { en: "Institut Français", fr: "Institut Français" },
     ],
   },
 ];
