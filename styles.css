@@ -667,6 +667,142 @@ section {
 }
 
 /* =========================================================================
+FIELD CLIPS 
+=============================================================================*/
+.clips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.clip-card {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--bg-alt); /* shows while the embed is still loading */
+  border: 1px solid var(--line);
+}
+
+/* The slot that gets filled with an <iframe> or platform <blockquote>.
+   Absolute + inset:0 makes whatever lands inside stretch to fill the card. */
+.clip-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* YouTube iframes will actually fill this fully. Instagram/TikTok's own
+   embeds size themselves according to their own rules and may not perfectly
+   fill a 9:16 box edge-to-edge — check this once real embeds are loading,
+   and adjust (e.g. object-fit-style centering, or accept their native
+   sizing/letterboxing) if it looks off. */
+.clip-media iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Bottom gradient + text overlay */
+.clip-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 50%; /* <- controls how far up the gradient reaches */
+  z-index: 2;
+  padding: 1.25rem 1rem 1rem;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 55%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* <- pushes text to the bottom of this now-taller box */
+  gap: 0.6rem;
+  pointer-events: none;
+}
+
+.clip-description {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.clip-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.clip-tags span {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  border: 1px solid rgba(241, 233, 216, 0.28);
+  padding: 0.2em 0.55em;
+  border-radius: 2px;
+  background: rgba(15, 13, 10, 0.4);
+}
+
+/* Mute/unmute icon button — top-right corner, above the video and overlay */
+.clip-sound {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 13, 10, 0.55);
+  border: 1px solid rgba(241, 233, 216, 0.25);
+  border-radius: 50%;
+  color: var(--ink);
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+.clip-sound:hover {
+  background: rgba(15, 13, 10, 0.8);
+  border-color: var(--clay);
+}
+.clip-sound svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Only YouTube cards get a working sound button (see earlier note on
+   platform limitations) — hide it for Instagram/TikTok cards so it doesn't
+   sit there non-functional. */
+.clip-card[data-platform="instagram"] .clip-sound,
+.clip-card[data-platform="tiktok"] .clip-sound {
+  display: none;
+}
+
+/* Responsive: 3 → 2 → 1 columns */
+@media (max-width: 900px) {
+  .clips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .clips-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================================
    FOOTER / CONTACT CTA
    ========================================================================= */
 .site-footer {

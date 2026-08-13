@@ -179,3 +179,82 @@ const TIMELINE = [
    (the part after "v=" in a youtube.com/watch?v=... URL).
    ------------------------------------------------------------------------- */
 const INTERVIEW_VIDEO_ID = "gygSU9MCURU";
+
+const FIELD_CLIPS = [
+  {
+    id: "0",
+    tags: [
+      {
+        en: "conservation",
+        fr: "conservation",
+      },
+      {
+        en: "archive",
+        fr: "archive",
+      },
+      {
+        en: "culture",
+        fr: "culture",
+      },
+      {
+        en: "kivu",
+        fr: "kivu",
+      },
+    ],
+    description: {
+      en: "recording Pygmees of the DRC North Kivu region",
+      fr: "Enregistrement des Pygmées de la région du Nord-Kivu, en RDC",
+    },
+    platform: "instagram",
+    url: "https://www.instagram.com/reel/DHOSO_rIS_B/?utm_source=ig_embed&amp;utm_campaign=loading",
+    thumbnail: "",
+  },
+  {
+    id: "1",
+    tags: [
+      {
+        en: "culture ",
+        fr: "culture ",
+      },
+      {
+        en: "afrosound ",
+        fr: "afrosound ",
+      },
+      {
+        en: "africa ",
+        fr: "africa ",
+      },
+    ],
+    description: {
+      en: "somewhere deep in Africa, in search of original sounds",
+      fr: "somewhere deep in Africa, in search of original sounds",
+    },
+    platform: "instagram",
+    url: "https://www.instagram.com/p/DH0TpMkOKFd/?img_index=1",
+    thumbnail: "",
+  },
+  {
+    id: "2",
+    tags: [
+      {
+        en: "culture ",
+        fr: "culture ",
+      },
+      {
+        en: "afrosound ",
+        fr: "afrosound ",
+      },
+      {
+        en: "heritage ",
+        fr: "heritage ",
+      },
+    ],
+    description: {
+      en: "rehearsing for a project with traditional african instruments.",
+      fr: "rehearsing for a project with traditional african instruments.",
+    },
+    platform: "instagram",
+    url: "https://www.instagram.com/reel/DSecesKCCxS/",
+    thumbnail: "",
+  },
+];

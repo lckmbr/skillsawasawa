@@ -82,6 +82,7 @@ function renderTimeline() {
    https://open.spotify.com/embed/{type}/{id}
    `spotifyUri` in data.js can be "album/ID", "track/ID", or a full
    "spotify:album:ID" URI — both are normalised below. */
+
 function renderReleases() {
   const el = document.querySelector("[data-releases]");
   if (!el || typeof RELEASES === "undefined") return;
@@ -124,6 +125,7 @@ function renderReleases() {
    autoplay=1 + mute=1 are required together for autoplay to work
    in modern browsers; playsinline keeps it inline on iOS.
    Rendered once — it doesn't depend on language. */
+
 (function renderInterview() {
   const wrap = document.querySelector("[data-video]");
   if (!wrap || typeof INTERVIEW_VIDEO_ID === "undefined") return;
@@ -180,6 +182,128 @@ function renderReleases() {
   updateLabel();
 })();
 
+/* -------Field Clips--------------------------------------------*/
+
+function buildClipCard(clip, lang) {
+  const card = document.createElement("article");
+  card.className = "clip-card";
+  card.dataset.platform = clip.platform;
+  card.dataset.clipId = clip.id;
+
+  card.innerHTML = `
+    <div class="clip-media" data-clip-media></div>
+    <button class="clip-sound" type="button" data-clip-sound aria-label="Unmute video"></button>
+    <div class="clip-overlay">
+      <p class="clip-description">${clip.description[lang]}</p>
+      <div class="clip-tags">
+        ${clip.tags
+          .map((t) => {
+            return `<span>${t[lang]}</span>`;
+          })
+          .join(" ")}
+      </div>
+    </div>
+  `;
+
+  return card;
+}
+
+function renderFieldClips() {
+  const grid = document.querySelector("[data-clips]");
+  if (!grid || typeof FIELD_CLIPS === undefined) return;
+  const lang = typeof getLang === "function" ? getLang() : "en";
+
+  grid.innerHTML = ""; // clear before rebuilding (needed for language-change re-renders)
+  FIELD_CLIPS.forEach((clip) => {
+    const card = buildClipCard(clip, lang);
+    grid.appendChild(card);
+  });
+}
+
+function observeFieldClips() {
+  const cards = document.querySelectorAll(".clip-card");
+  console.log("observing", cards.length, "clip cards");
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        console.log("Intersection check:", entry.target, entry.isIntersecting);
+        if (entry.isIntersecting) {
+          console.log("Calling loadClipEmbed for", entry.target.dataset.clipId);
+          loadClipEmbed(entry.target);
+          io.unobserve(entry.target); //load only once
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  cards.forEach((card) => {
+    io.observe(card);
+  });
+}
+
+function loadClipEmbed(card) {
+  const clipId = card.dataset.clipId;
+  const clip = FIELD_CLIPS.find((c) => c.id == clipId);
+  const mediaSlot = card.querySelector("[data-clip-media]");
+  console.log("loadClipEmbed:", { clipId, clip, mediaSlot });
+
+  if (!clip || !mediaSlot) return;
+
+  if (clip.platform === "youtube") {
+    loadYoutubeClip(clip, mediaSlot, card);
+  } else if (clip.platform === "instagram") {
+    loadInstagramClip(clip, mediaSlot);
+  } else if (clip.platform === "tiktok") {
+    loadTikTokClip(clip, mediaSlot);
+  }
+}
+
+function loadYoutubeClip(clip, mediaSlot, card) {
+  const frameId = `clip-frame-${clip.id}`;
+  const src =
+    `https://www.youtube.com/embed/${clip.youtubeId}` +
+    `autoplay=1&mute=1&loop=1&playlist=${clip.youtubeId}` +
+    `&controls=0&modestbranding=1&playsinline=1%rel=0` +
+    `&enablejsapi=1&origin=${encoreURIComponent(location.origin)}`;
+
+  mediaSlot.inneHTML = `<iframe id="${frameId}" src="${src}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+  wireClipSoundButton(card, document.getELementById(frameId));
+}
+
+function wireClipSoundButton() {
+  const btn = card.querySelector("[data-clip-sound]");
+  if (!btn || !frame) return;
+  let muted = true;
+
+  function updateIcon() {
+    btn.innerHTML = muted ? ICON_MUTED : ICON_UNMUTED;
+    btn.setAttribute("aria-label", muted ? "Unmute Video" : "Mute Video");
+  }
+
+  btn.addEventListener("click", () => {
+    muted = !muted;
+    frame.contentWindow.postMessage(
+      JSON.stringify({
+        event: "command",
+        func: muted ? "mute" : "unMute",
+        args: [],
+      }),
+      "*",
+    );
+
+    updateIcon();
+  });
+  updateIcon();
+}
+
+function loadInstagramClip(clip, mediaSlot) {
+  mediaSlot.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${clip.url}"></blocquote>`;
+  if (window.instgrm) {
+    window.instgrm.Embeds.process();
+  }
+}
+
 /* ---- Footer year -------------------------------------------------------- */
 (function footerYear() {
   document.querySelectorAll("[data-year]").forEach((el) => {
@@ -190,6 +314,8 @@ function renderReleases() {
 /* ---- Initial render + re-render on language toggle ---------------------- */
 renderTimeline();
 renderReleases();
+renderFieldClips();
+observeFieldClips();
 document.addEventListener("languagechange", () => {
   renderTimeline();
   renderReleases();

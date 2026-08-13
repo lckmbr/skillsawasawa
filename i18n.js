@@ -50,6 +50,9 @@ const I18N = {
     "video.desc": "On my City, sound as memory, and Studio production",
     "video.cta": "Watch on YouTube",
 
+    "clips.eyebrow": "Field",
+    "clips.title": "From The Field",
+
     "footer.heading": "Let's build<br />something together.",
     "footer.cta": "Get in touch",
     "footer.tagline": "YiraFolk — Eastern DRC, reimagined.",
@@ -125,6 +128,8 @@ const I18N = {
     "video.desc":
       "Sur le YiraFolk, le son comme mémoire, et la musique de « Trop c'est Trop ».",
     "video.cta": "Voir sur YouTube",
+    "clips.eyebrow": "Terrain",
+    "clips.title": "Sur Terrain",
 
     "footer.heading": "Construisons<br />quelque chose ensemble.",
     "footer.cta": "Me contacter",
