@@ -245,16 +245,40 @@ const FIELD_CLIPS = [
         fr: "afrosound ",
       },
       {
-        en: "heritage ",
-        fr: "heritage ",
+        en: "heritage",
+        fr: "héritage",
       },
     ],
     description: {
       en: "rehearsing for a project with traditional african instruments.",
-      fr: "rehearsing for a project with traditional african instruments.",
+      fr: "répétition pour un projet avec des instruments traditionnels africains.",
     },
     platform: "instagram",
     url: "https://www.instagram.com/reel/DSecesKCCxS/",
+    thumbnail: "",
+  },
+  {
+    id: "4",
+    tags: [
+      {
+        en: "traditional ",
+        fr: "traditionelle ",
+      },
+      {
+        en: "Afrojazz ",
+        fr: "Afrojazz",
+      },
+      {
+        en: "instrument",
+        fr: "instrument",
+      },
+    ],
+    description: {
+      en: "playing a local instrument often used in jazz music",
+      fr: "jouant  d’un instrument local souvent utilisé dans le jazz.",
+    },
+    platform: "youtube",
+    url: "https://youtube.com/shorts/KGz-VaKGO_g?si=90jwP2jpVCltl136",
     thumbnail: "",
   },
 ];
