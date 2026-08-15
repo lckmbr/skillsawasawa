@@ -257,28 +257,4 @@ const FIELD_CLIPS = [
     url: "https://www.instagram.com/reel/DSecesKCCxS/",
     thumbnail: "",
   },
-  {
-    id: "4",
-    tags: [
-      {
-        en: "traditional ",
-        fr: "traditionelle ",
-      },
-      {
-        en: "Afrojazz ",
-        fr: "Afrojazz",
-      },
-      {
-        en: "instrument",
-        fr: "instrument",
-      },
-    ],
-    description: {
-      en: "playing a local instrument often used in jazz music",
-      fr: "jouant  d’un instrument local souvent utilisé dans le jazz.",
-    },
-    platform: "youtube",
-    url: "https://youtube.com/shorts/KGz-VaKGO_g?si=90jwP2jpVCltl136",
-    thumbnail: "",
-  },
 ];
