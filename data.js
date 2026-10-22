@@ -115,7 +115,7 @@ const WORKS = [
   },
   {
     id: "kizazi",
-    cover: "/images/kizazi.png",
+    cover: "/images/Kizazi.png",
     title: "KIZAZI",
     subtitle: {
       en: "Original Music . Performing Arts",
