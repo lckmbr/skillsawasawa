@@ -27,7 +27,7 @@ const I18N = {
       "I'm a composer and musician, and the creator of YiraFolk — an original musical style that blends the traditional sounds of Eastern Democratic Republic of the Congo with a contemporary, cinematic approach.",
     "about.p2":
       "My practice celebrates African musical heritage, carrying folk instruments and ancestral rhythms into modern composition. Inspired by nature, storytelling, and the richness of African traditions, I create immersive music for film, documentaries, and creative projects — building a bridge between Africa's cultural legacy and today's global sound.",
-    "about.stat1.value": "2018",
+    "about.stat1.value": "2017",
     "about.stat1.label": "Work begins",
     "about.stat2.value": "3",
     "about.stat2.label": "Partner institutions",
@@ -105,7 +105,7 @@ const I18N = {
       "Je suis compositeur et musicien, créateur du YiraFolk — un style musical original qui allie les sons traditionnels de l'Est de la République démocratique du Congo à une approche contemporaine et cinématographique.",
     "about.p2":
       "Ma pratique célèbre le patrimoine musical africain, en portant instruments traditionnels et rythmes ancestraux vers la composition moderne. Inspiré par la nature, le récit et la richesse des traditions africaines, je crée une musique immersive pour le cinéma, le documentaire et des projets créatifs — un pont entre l'héritage culturel de l'Afrique et le son mondial d'aujourd'hui.",
-    "about.stat1.value": "2018",
+    "about.stat1.value": "2017",
     "about.stat1.label": "Débuts",
     "about.stat2.value": "3",
     "about.stat2.label": "Institutions partenaires",

@@ -142,7 +142,7 @@ const TIMELINE = [
       fr: "HORIZON — avec Rogatien Milord",
     },
     description: {
-      en: "I took part in Rogatien Milord's major album project HORIZON, working alongside sound engineers from Europe, the United States, and Canada — including Djizzo Balume and KC Porter. The launch was covered by major media outlets including FRANCE 24, TV5 MONDE, VOA, RFI, CANAL+, and TRACE TV.",
+      en: "I took part in Rogatien Milord's major album project HORIZON, working alongside sound engineers from Europe, USA, and Canada — including Djizzo Balume and KC Porter. Its launch was covered by major media outlets including FRANCE 24, TV5 MONDE, VOA, RFI, CANAL+, and TRACE TV.",
       fr: "J'ai participé à HORIZON, le grand projet d'album de Rogatien Milord, aux côtés d'ingénieurs du son venus d'Europe, des États-Unis et du Canada — dont Djizzo Balume et KC Porter. Le lancement a été couvert par de grands médias tels que FRANCE 24, TV5 MONDE, VOA, RFI, CANAL+ et TRACE TV.",
     },
     tags: [
