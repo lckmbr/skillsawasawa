@@ -59,12 +59,13 @@
           </li>
           <li>
             <a
-              href="index.html#journey"
-              data-i18n="nav.journey"
+              href="index.html#works"
+              data-i18n="nav.works"
             >
-              Journey
+              Works
             </a>
           </li>
+
           <li>
             <a
               href="index.html#releases"
@@ -172,7 +173,7 @@
         <div class="about-portrait">
           <!-- REPLACE: portrait photo -->
           <img
-            src="../images/skill portrait.jpeg""
+            src="../images/skill portrait.jpeg"
             alt="Portrait of Skill Sawasawa"
           />
         </div>
@@ -217,6 +218,36 @@
 
     <hr class="divider" />
 
+    <!-- ============================= SELECTED WORKS & FILM CREDITS ============================= -->
+    <section id="works">
+      <div class="container">
+        <div class="section-head">
+          <span
+            class="eyebrow"
+            data-i18n="works.eyebrow"
+          >
+            Credits
+          </span>
+          <h2 data-i18n="works.title">Selected works and film credits</h2>
+          <p
+            class="section-intro"
+            data-i18n="works.intro"
+          >
+            Works that have carried my sound beyond Eastern DRC and earned
+            international recognition.
+          </p>
+        </div>
+        <div
+          class="works-list"
+          data-works
+        >
+          <!-- Populated by script.js from the WORKS array in data.js -->
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
     <!-- ============================= JOURNEY / TIMELINE ============================= -->
     <section id="journey">
       <div class="container">
@@ -227,12 +258,8 @@
           >
             The Journey
           </span>
-          <h2 data-i18n="journey.title">The years behind the work.</h2>
-          <p data-i18n="journey.intro">
-            My journey runs through training grounds in Goma, Bukavu, Kampala,
-            Nairobi, and Rwanda, toward an internationally recognised film score
-            and a wartime album of resilience.
-          </p>
+          <h2 data-i18n="journey.title">Other Works</h2>
+          <p data-i18n="journey.intro"></p>
         </div>
         <ol
           class="timeline"
@@ -289,12 +316,16 @@
       <div class="video-caption">
         <div>
           <h2 data-i18n="video.title">In conversation</h2>
-          <p data-i18n="video.desc">
-          </p>
+          <p data-i18n="video.desc"></p>
         </div>
 
         <div class="video-caption-actions">
-          <button class="btn" type="button" data-video-sound aria-pressed="false" ></button>
+          <button
+            class="btn"
+            type="button"
+            data-video-sound
+            aria-pressed="false"
+          ></button>
           <a
             class="btn"
             href="https://www.youtube.com/watch?v=gygSU9MCURU"
@@ -311,10 +342,18 @@
     <section class="field-clips">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow" data-i18n="clips.eyebrow">Field</span>
+          <span
+            class="eyebrow"
+            data-i18n="clips.eyebrow"
+          >
+            Field
+          </span>
           <h2 data-i18n="clips.title">From the field.</h2>
         </div>
-        <div class="clips-grid" data-clips></div>
+        <div
+          class="clips-grid"
+          data-clips
+        ></div>
       </div>
     </section>
 
@@ -423,6 +462,9 @@
         });
       })();
     </script>
-      <script async src="//www.instagram.com/embed.js"></script>
+    <script
+      async
+      src="//www.instagram.com/embed.js"
+    ></script>
   </body>
 </html>

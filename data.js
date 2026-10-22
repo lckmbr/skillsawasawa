@@ -67,6 +67,99 @@ const GALLERY_INITIAL_COUNT = 6;
 const GALLERY_LOAD_STEP = 3;
 
 /* -------------------------------------------------------------------------
+   SELECTED WORKS & FILM CREDITS
+   Each object:
+   { id, cover, title, subtitle: {en,fr}, description: {en,fr},
+     links: [ { label: {en,fr}, url } ] }
+   - cover: image path/URL, shown at 2:3 on the left (desktop)
+   - title: plain string, since project titles usually aren't translated
+     (turn it into {en, fr} and use title[lang] in the renderer if you need that)
+   - links: add as many as you like, or [] for none
+   ------------------------------------------------------------------------- */
+const WORKS = [
+  {
+    id: "trop-cest-trop",
+    cover: "/images/tropctrop.jpg",
+    title: "Goma, Trop c'est Trop",
+    subtitle: {
+      en: "Original Music Composition",
+      fr: "Composition musicale originale",
+    },
+    description: {
+      en: "Skill Sawasawa contributed original music to Goma, Trop C'est Trop, a documentary project directed by Elisé Sawasawa. His musical work forms part of an audiovisual narrative connected to the lived realities of Goma.",
+      fr: "Skill Sawasawa a composé la musique originale de Goma, Trop C’est Trop, un projet documentaire réalisé par Elisé Sawasawa. Son travail musical s’inscrit dans un récit audiovisuel ancré dans les réalités vécues à Goma.",
+    },
+    links: [
+      {
+        label: {
+          en: "Discover the film on Cineuropa",
+          fr: "Découvrez le film sur Cineuropa.",
+        },
+        url: "https://cineuropa.org/fr/film/488992/",
+      },
+      {
+        label: {
+          en: "Discover the film on Atlas Atelier",
+          fr: "Découvrez le film sur Atlas Atelier",
+        },
+        url: "https://atlasateliers.marrakech-festival.com/fr/selection/2025/goma-enough-is-enough", // REPLACE
+      },
+      {
+        label: {
+          en: "Discover the film on CPH:DOX",
+          fr: "En savoir plus sur le film sur CPH:DOX.",
+        },
+        url: "https://cphdox.dk/film/enough-is-enough/",
+      },
+    ],
+  },
+  {
+    id: "kizazi",
+    cover: "/images/kizazi.avif",
+    title: "KIZAZI",
+    subtitle: {
+      en: "Original Music . Performing Arts",
+      fr: "Musique originale · Arts du spectacle",
+    },
+    description: {
+      en: "Skill Sawasawa is credited for original music for KIZAZI, a performing arts project that brings music and movement into dialogue.",
+      fr: "Skill Sawasawa est crédité pour la musique originale de KIZAZI, un projet d’arts du spectacle qui fait dialoguer la musique et le mouvement.",
+    },
+    links: [
+      {
+        label: {
+          en: "View the official project page",
+          fr: "Consultez la page officielle du projet.",
+        },
+        url: "https://www.nadiabeugre.com/spectacles/kizazi",
+      },
+    ],
+  },
+  {
+    id: "kimart",
+    cover: "/images/africart.png",
+    title: "KIM'ART SOUND",
+    subtitle: {
+      en: "Sound Research . African Sonic Identity",
+      fr: "Recherche sonore · Identité sonore africaine",
+    },
+    description: {
+      en: "Through sound research and creative exploration, Skill Sawasawa investigates the expressive potential of African sound and cultural heritage. His work seeks to connect traditional sonic identities with contemporary artistic practices.",
+      fr: "À travers la recherche sonore et l’exploration créative, Skill Sawasawa explore le potentiel expressif des sonorités africaines et du patrimoine culturel. Son travail cherche à faire dialoguer les identités sonores traditionnelles avec les pratiques artistiques contemporaines.",
+    },
+    links: [
+      {
+        label: {
+          en: "Discover KIM'ART SOUND - Africart Progress",
+          fr: "Découvrez KIM’ART SOUND – Africart Progress",
+        },
+        url: "https://africartprogress.com/projets/kimart-sound/",
+      },
+    ],
+  },
+];
+
+/* -------------------------------------------------------------------------
    RELEASES — Spotify cards
    Each object: { title, year, type: {en,fr}, note: {en,fr}, spotifyUri }
    spotifyUri accepts either:
@@ -104,22 +197,6 @@ const RELEASES = [
    Each object: { year, title: {en,fr}, description: {en,fr}, tags: [{en,fr}] }
    ------------------------------------------------------------------------- */
 const TIMELINE = [
-  {
-    year: "2025",
-    title: {
-      en: "Scoring 'Trop c'est Trop'",
-      fr: "Musique de « Trop c'est Trop »",
-    },
-    description: {
-      en: "I handled sound design, mix, and sonic arrangement for the multiple international award-winning film by Elisé Sawasawa.",
-      fr: "J'ai assuré le sound design, le mixage et l'arrangement sonore du film multi-primé à l'international d'Elisé Sawasawa.",
-    },
-    tags: [
-      { en: "Film score", fr: "Musique de film" },
-      { en: "Sound design", fr: "Sound design" },
-      { en: "Mix", fr: "Mixage" },
-    ],
-  },
   {
     year: "2025",
     title: {
@@ -179,7 +256,6 @@ const TIMELINE = [
    (the part after "v=" in a youtube.com/watch?v=... URL).
    ------------------------------------------------------------------------- */
 const INTERVIEW_VIDEO_ID = "gygSU9MCURU";
-
 const FIELD_CLIPS = [
   {
     id: "0",

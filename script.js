@@ -41,6 +41,38 @@
   });
 })();
 
+function renderWorks() {
+  const el = document.querySelector("[data-works]");
+  if (!el || typeof WORKS === "undefined") return;
+  const lang = typeof getLang === "function" ? getLang() : "en";
+
+  el.innerHTML = WORKS.map(
+    (w) => `
+    <article class="work-card">
+      <div class="work-cover">
+        <img src="${w.cover}" alt="${w.title}" loading="lazy" />
+      </div>
+      <div class="work-body">
+        <h3>${w.title}</h3>
+        <p class="work-subtitle">${w.subtitle[lang]}</p>
+        <p class="work-description">${w.description[lang]}</p>
+        ${
+          w.links && w.links.length
+            ? `<ul class="work-links">
+                ${w.links
+                  .map(
+                    (l) =>
+                      `<li><a href="${l.url}" target="_blank" rel="noopener">${l.label[lang]}</a></li>`,
+                  )
+                  .join("")}
+              </ul>`
+            : ""
+        }
+      </div>
+    </article>`,
+  ).join("");
+}
+
 /* ---- Timeline: render (bilingual) + reveal on scroll -------------------
    Purely additive — if TIMELINE data isn't present on a page, this no-ops. */
 function renderTimeline() {
@@ -321,7 +353,9 @@ renderTimeline();
 renderReleases();
 renderFieldClips();
 observeFieldClips();
+renderWorks();
 document.addEventListener("languagechange", () => {
   renderTimeline();
   renderReleases();
+  renderWorks();
 });

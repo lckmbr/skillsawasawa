@@ -14,6 +14,7 @@ const I18N = {
     "nav.releases": "Releases",
     "nav.gallery": "Gallery",
     "nav.contact": "Contact",
+    "nav.works": "Works",
 
     "hero.eyebrow": "Composer &middot; Musician &middot; Sound Storyteller",
     "hero.title":
@@ -34,8 +35,13 @@ const I18N = {
     "about.stat3.value": "2",
     "about.stat3.label": "2025 releases",
 
+    "works.eyebrow": "Credits",
+    "works.title": "Selected works and film credits",
+    "works.intro":
+      "Works that have carried my sound beyond Eastern DRC and earned international recognition.",
+
     "journey.eyebrow": "The Journey",
-    "journey.title": "The years behind the work.",
+    "journey.title": "Other Works",
     "journey.intro":
       "My journey interweaves Goma, Bukavu, Kampala, Nairobi, and Rwanda, culminating in internationally recognized film music and an album of resilience born in the heart of war.",
     "journey.note":
@@ -92,6 +98,7 @@ const I18N = {
     "nav.releases": "Sorties",
     "nav.gallery": "Galerie",
     "nav.contact": "Contact",
+    "nav.works": "Projets",
 
     "hero.eyebrow": "Compositeur &middot; Musicien &middot; Narrateur sonore",
     "hero.title":
@@ -112,8 +119,13 @@ const I18N = {
     "about.stat3.value": "2",
     "about.stat3.label": "Sorties en 2025",
 
+    "works.eyebrow": "Crédits",
+    "works.title": "Œuvres sélectionnées et crédits de films",
+    "works.intro":
+      "Des œuvres qui ont fait rayonner mon univers sonore au-delà de l’Est de la RDC et lui ont valu une reconnaissance internationale.",
+
     "journey.eyebrow": "Le Parcours",
-    "journey.title": "Les années derrière le travail.",
+    "journey.title": "Autres Travaux",
     "journey.intro":
       "Mon parcours entrelace Goma, Bukavu, Kampala, Nairobi et le Rwanda, jusqu'à une musique de film reconnue à l'international et un album de résilience né au cœur de la guerre.",
     "journey.note":
